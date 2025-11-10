@@ -15,7 +15,9 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import me.idodanon.locationbasednotes.data.Note
@@ -46,9 +48,14 @@ fun MainScreen(
             Text(
                 text = "Welcome, $username!",
                 style = MaterialTheme.typography.headlineLarge.copy(
-                    fontWeight = androidx.compose.ui.text.font.FontWeight.Bold
-                )
+                    fontWeight = FontWeight.Bold
+                ),
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+                modifier = Modifier.weight(1f)
             )
+
+            Spacer(modifier = Modifier.width(8.dp))
 
             IconButton(onClick = { onLogout() }) {
                 Icon(
@@ -58,6 +65,7 @@ fun MainScreen(
                 )
             }
         }
+
 
         Column(
             modifier = Modifier

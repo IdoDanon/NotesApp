@@ -64,6 +64,7 @@ fun EditNoteScreen(
         rememberLauncherForActivityResult(ActivityResultContracts.TakePicturePreview()) { bitmap ->
             bitmap?.let {
                 val uri = saveImageToCache(context, it)
+                showImageDialog = false
                 imageUri = uri.toString()
             }
         }
@@ -71,6 +72,7 @@ fun EditNoteScreen(
     val galleryLauncher =
         rememberLauncherForActivityResult(ActivityResultContracts.GetContent()) { uri ->
             uri?.let { imageUri = it.toString() }
+            showImageDialog = false
         }
 
     LaunchedEffect(Unit) {
@@ -251,7 +253,7 @@ fun EditNoteScreen(
                 .padding(16.dp)
                 .align(Alignment.TopStart)
         ) {
-            Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+            Icon(Icons.AutoMirrored.Default.ArrowBack, contentDescription = "Back")
         }
     }
 }
