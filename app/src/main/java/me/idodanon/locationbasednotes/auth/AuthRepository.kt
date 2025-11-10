@@ -2,7 +2,6 @@ package me.idodanon.locationbasednotes.auth
 
 import com.google.firebase.auth.FirebaseAuth
 
-
 class AuthRepository(
     val auth: FirebaseAuth = FirebaseAuth.getInstance()
 ) {

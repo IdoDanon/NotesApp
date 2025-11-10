@@ -1,5 +1,7 @@
 package me.idodanon.locationbasednotes.main
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -21,6 +23,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
+@RequiresApi(Build.VERSION_CODES.TIRAMISU)
 @Composable
 fun MainScreen(
     navController: NavController,
@@ -60,7 +63,7 @@ fun MainScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(horizontal = 16.dp)
-                .padding(top = 100.dp), // a bit lower
+                .padding(top = 100.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
@@ -162,7 +165,6 @@ fun MainScreen(
         }
     }
 }
-
 
 @Composable
 fun NoteItem(note: Note, onClick: () -> Unit) {

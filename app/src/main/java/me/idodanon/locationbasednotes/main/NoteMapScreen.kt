@@ -11,10 +11,13 @@ import androidx.compose.ui.viewinterop.AndroidView
 import me.idodanon.locationbasednotes.data.Note
 import android.location.Geocoder
 import android.location.Address
+import android.os.Build
 import android.os.Handler
 import android.os.Looper
+import androidx.annotation.RequiresApi
 import java.util.Locale
 
+@RequiresApi(Build.VERSION_CODES.TIRAMISU)
 @Composable
 fun NotesMapScreen(
     notes: List<Note>,
@@ -62,6 +65,7 @@ fun NotesMapScreen(
 
 
 
+@RequiresApi(Build.VERSION_CODES.TIRAMISU)
 fun getGeoPointFromLocation(
     context: Context,
     locationName: String?,
