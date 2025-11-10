@@ -78,11 +78,20 @@ fun AuthScreen(
 
         Spacer(modifier = Modifier.height(16.dp))
 
+        val isButtonEnabled = email.isNotBlank() && password.isNotBlank()
+
         Button(
             onClick = {
                 if (isLogin) authViewModel.login(email, password)
                 else authViewModel.signup(email, password)
             },
+            enabled = isButtonEnabled,
+            colors = ButtonDefaults.buttonColors(
+                containerColor = MaterialTheme.colorScheme.primary,
+                contentColor = MaterialTheme.colorScheme.onPrimary,
+                disabledContainerColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.7f),
+                disabledContentColor = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.7f)
+            ),
             modifier = Modifier
                 .fillMaxWidth()
                 .height(56.dp),
@@ -93,17 +102,6 @@ fun AuthScreen(
                 style = MaterialTheme.typography.titleMedium
             )
         }
-
-        Spacer(modifier = Modifier.height(8.dp))
-
-        TextButton(
-            onClick = { isLogin = !isLogin },
-            modifier = Modifier.padding(top = 8.dp)
-        ) {
-            Text(
-                text = if (isLogin) "Don't have an account? Sign Up" else "Already have an account? Login",
-                style = MaterialTheme.typography.bodyMedium
-            )
-        }
     }
 }
+
