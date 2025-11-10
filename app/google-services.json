@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "818408749569",
+    "project_id": "noteapp-490e4",
+    "storage_bucket": "noteapp-490e4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818408749569:android:60d4d159af7e5acf14de00",
+        "android_client_info": {
+          "package_name": "me.idodanon.locationbasednotes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEWqVMmHO9LxTdBnrF-QQSLVPLMc3mrV8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
